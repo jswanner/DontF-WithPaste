@@ -1,6 +1,7 @@
 {
   "name": "Don't fuck with paste",
   "version": "0.1",
+  "manifest_version": 2,
   "description": "Prevents the blocking of pasting into input fields",
   "content_scripts": [
     {
