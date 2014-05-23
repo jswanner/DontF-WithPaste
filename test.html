@@ -1,12 +1,21 @@
 <html>
   <head>
     <title>I'm fucking with paste</title>
+    <script>
+      window.onload = function(){
+        var preventPaste = function(e){ e.preventDefault(); }
+        document.getElementById('property').onpaste = preventPaste;
+        document.getElementById('listener').addEventListener('paste', preventPaste, false);
+      };
+    </script>
   </head>
   <body>
     <p>The input box below doesn't let you paste stuff into it; every time a page like this is created, a kitten is killed.</p>
     <form>
       <label for="unpastable">Go ahead, try to paste</label>
-      <input onpaste="return false;" type="text" id="unpastable" />
+      <input id="attribute" type="text" onpaste="return false;" />
+      <input id="property" type="text" />
+      <input id="listener" type="text" />
     </form>
   </body>
 </html>

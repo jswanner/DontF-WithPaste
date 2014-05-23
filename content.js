@@ -1,1 +1,5 @@
-jQuery('input[onpaste]').attr('onpaste', '');
+var allowPaste = function(e){
+  e.stopImmediatePropagation();
+  return true;
+};
+document.addEventListener('paste', allowPaste, true);
