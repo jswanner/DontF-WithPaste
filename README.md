@@ -16,13 +16,12 @@ blocking.
 
 ## Going forward
 
-As it stands, this extension only looks for input fields with an onpaste
-attribute, and removes the value of that attribute.  So, I know there
-are some problems with this approach:
+As it stands, this extension just allows the browser to accept all
+`paste` events, and skips any other `paste` event handlers.  So, I know
+there are some problems with this approach:
 
-1. There are probably some sites that use the onpaste attribute for
-   things other than just preventing paste, and this extension will
-   completely kill that functionality.
-2. I'm sure there are other ways to prevent someone from pasting than
-   just "return false;" in the onpaste attribute.  Those kinds of
-   blocks are not currently being handled.
+1. There are some sites that use the onpaste attribute for things other
+   than just preventing paste, and this extension will completely kill
+   that functionality.
+2. It would be much nicer if there was a white list of URLs where this
+   extensions intervention is skipped.
