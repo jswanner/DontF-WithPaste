@@ -24,4 +24,4 @@ there are some problems with this approach:
    than just preventing paste, and this extension will completely kill
    that functionality.
 2. It would be much nicer if there was a white list of URLs where this
-   extensions intervention is skipped.
+   extension's intervention is skipped.
