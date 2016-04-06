@@ -9,7 +9,8 @@
       "exclude_matches": [
         "*://*.facebook.com/*",
         "*://*.google.com/*",
-        "*://github.com/*"
+        "*://github.com/*",
+        "*://imgur.com/*"
       ],
       "js": ["content.js"],
       "all_frames": true
