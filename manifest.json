@@ -6,7 +6,11 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "exclude_matches": [ "*://*.google.com/*" ],
+      "exclude_matches": [
+        "*://*.facebook.com/*",
+        "*://*.google.com/*",
+        "*://github.com/*"
+      ],
       "js": ["content.js"],
       "all_frames": true
     }
