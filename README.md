@@ -14,14 +14,10 @@ for me to type out all the characters than it is for me to copy from
 This is a dead simple Google Chrome extension that removes paste
 blocking.
 
-## Going forward
+## Configuration
 
-As it stands, this extension just allows the browser to accept all
-`paste` events, and skips any other `paste` event handlers.  So, I know
-there are some problems with this approach:
-
-1. There are some sites that use the onpaste attribute for things other
-   than just preventing paste, and this extension will completely kill
-   that functionality.
-2. It would be much nicer if there was a white list of URLs where this
-   extension's intervention is skipped.
+There are some sites that do helpful things with paste events, and for those
+sites you want their paste event handlers to still work. In the options for
+this extension, you can add an exclusion pattern that matches the site's URL,
+which will prevent this extension from running on that site, and thereby
+allowing the paste event to occur.
