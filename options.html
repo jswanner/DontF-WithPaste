@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <link href="options.css" rel="stylesheet" type="text/css" />
+    <script src="defaults.js" type="text/javascript"></script>
+    <script src="options.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <form id="options">
+      <fieldset>
+        <label for="include">Include URL Patterns</label>
+        <textarea id="include" name="include" rows=5></textarea>
+        <p>This extension will only run on pages whose URL matches
+        these patterns. You can specify as many patterns as you like, each on
+        its own line. Each pattern needs to be a <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions">JavaScript Regular Expression</a>.</p>
+      </fieldset>
+      <fieldset>
+        <label for="exclude">Exclude URL Patterns</label>
+        <textarea id="exclude" name="exclude" rows=5></textarea>
+        <p>This is used to exclude pages that matched the patterns
+        above. You can specify as many patterns as you like, each on its own
+        line. Each pattern needs to be a <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions">JavaScript Regular Expression</a>.</p>
+      </fieldset>
+      <fieldset>
+        <button>Save Changes</button>
+        <button type="reset">Use Default Settings</button>
+        <p>Reload any relevant tabs after saving changes.</p>
+      </fieldset>
+    </form>
+  </body>
+</html>

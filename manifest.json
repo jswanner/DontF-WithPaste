@@ -1,19 +1,24 @@
 {
-  "name": "Don't fuck with paste",
-  "version": "0.6",
-  "manifest_version": 2,
-  "description": "Prevents the blocking of pasting into input fields",
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
-      "exclude_matches": [
-        "*://*.facebook.com/*",
-        "*://*.google.com/*",
-        "*://github.com/*",
-        "*://imgur.com/*"
+      "all_frames": true,
+      "js": [
+        "defaults.js",
+        "content.js"
       ],
-      "js": ["content.js"],
-      "all_frames": true
+      "matches": ["<all_urls>"]
     }
-  ]
+  ],
+  "description": "Prevents the blocking of pasting into input fields",
+  "homepage_url": "https://github.com/jswanner/DontFuckWithPaste",
+  "manifest_version": 2,
+  "name": "Don't Fuck With Paste",
+  "options_ui": {
+    "chrome_style": true,
+    "page": "options.html"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "version": "0.6"
 }

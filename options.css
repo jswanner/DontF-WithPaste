@@ -1,0 +1,29 @@
+body {
+  font-size: 14px;
+  margin: 0;
+  width: 40em;
+}
+
+fieldset {
+  border: 0 none;
+  padding: 1em;
+}
+
+fieldset + fieldset {
+  border-top: 1px solid #D2D2D2;
+}
+
+label {
+  display: block;
+}
+
+p {
+  color: #888;
+  font-size: smaller;
+  line-height: 14px;
+  margin: 0;
+}
+
+textarea {
+  width: 100%;
+}
