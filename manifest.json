@@ -9,7 +9,7 @@
       "matches": ["<all_urls>"]
     }
   ],
-  "description": "Prevents the blocking of pasting into input fields",
+  "description": "Prevents the blocking of copying from & pasting into input fields",
   "homepage_url": "https://github.com/jswanner/DontFuckWithPaste",
   "manifest_version": 2,
   "name": "Don't Fuck With Paste",
@@ -20,5 +20,5 @@
   "permissions": [
     "storage"
   ],
-  "version": "1.0"
+  "version": "1.1"
 }
