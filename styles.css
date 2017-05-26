@@ -4,6 +4,14 @@ body {
   width: 40em;
 }
 
+.delete {
+  height: 1.5em;
+  min-height: inherit;
+  min-width: inherit;
+  padding: 0;
+  width: 1.5em;
+}
+
 fieldset {
   border: 0 none;
   padding: 1em;
@@ -11,6 +19,14 @@ fieldset {
 
 fieldset + fieldset {
   border-top: 1px solid #D2D2D2;
+}
+
+input {
+  width: 99%;
+}
+
+.deletable {
+  width: 94%;
 }
 
 label {
@@ -24,6 +40,7 @@ p {
   margin: 0;
 }
 
-textarea {
-  width: 100%;
+ul {
+  list-style-type: none;
+  padding-left: 0;
 }

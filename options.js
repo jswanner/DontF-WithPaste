@@ -1,30 +1,36 @@
-document.addEventListener('DOMContentLoaded', function() {
-  var form = document.getElementById('options');
+(function() {
+  let rules = new DFWP.Rules();
 
-  form.addEventListener('reset', function(event) {
-    event.preventDefault();
-
-    chrome.storage.sync.set(window.defaultValues);
-  });
-
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    chrome.storage.sync.set({
-      exclude: form.exclude.value,
-      include: form.include.value
-    });
-  });
-
-  chrome.storage.onChanged.addListener(function(changes) {
-    for (key in changes) {
-      var change = changes[key];
-      form[key].value = change.newValue || '';
+  function displayRules(container) {
+    while(container.firstChild) {
+      container.removeChild(container.firstChild);
     }
-  });
 
-  chrome.storage.sync.get(window.defaultValues, function({exclude, include}) {
-    form.exclude.value = exclude;
-    form.include.value = include;
+    DFWP.storage.get({ rules: [] }, ({ rules: values }) => {
+      rules = DFWP.Rules.deserialize(values);
+      rules.forEach((rule) => new DFWP.RuleView(rule, rules).render(container));
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.container');
+    const form = document.querySelector('.form');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      DFWP.storage.set({ rules: rules.serialize() });
+    });
+
+    document.querySelector('.add').addEventListener('click', () => {
+      const rule = new DFWP.Rule();
+      rules.add(rule);
+      new DFWP.RuleView(rule, rules).render(container);
+    });
+
+    chrome.storage.onChanged.addListener(() => {
+      displayRules(container);
+    });
+
+    displayRules(container);
   });
-});
+})();

@@ -3,7 +3,7 @@
   <head>
     <link href="styles.css" rel="stylesheet" type="text/css" />
     <script src="dfwp.js" type="text/javascript"></script>
-    <script src="options.js" type="text/javascript"></script>
+    <script src="popup.js" type="text/javascript"></script>
   </head>
   <body>
     <form class="form">
@@ -14,13 +14,20 @@
       </fieldset>
       <fieldset>
         <button type="submit">Save</button>
+        <button class="cancel" type="button">Cancel</button>
       </fieldset>
     </form>
 
-    <template id="template">
+    <template id="existing">
       <li>
         <input class="deletable" type="text"/>
         <button class="delete" type="button">&#x2716;</button>
+      </li>
+    </template>
+
+    <template id="new">
+      <li>
+        <input type="text"/>
       </li>
     </template>
   </body>
