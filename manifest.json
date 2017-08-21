@@ -2,10 +2,7 @@
   "content_scripts": [
     {
       "all_frames": true,
-      "js": [
-        "defaults.js",
-        "content.js"
-      ],
+      "js": ["defaults.js", "content.js"],
       "matches": ["<all_urls>"]
     }
   ],
@@ -13,12 +10,11 @@
   "homepage_url": "https://github.com/jswanner/DontFuckWithPaste",
   "manifest_version": 2,
   "name": "Don't Fuck With Paste",
+  "background": { "scripts": ["background.js"] },
   "options_ui": {
     "chrome_style": true,
     "page": "options.html"
   },
-  "permissions": [
-    "storage"
-  ],
+  "permissions": ["storage", "contextMenus", "tabs"],
   "version": "1.1"
 }
