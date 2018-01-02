@@ -23,3 +23,8 @@ those sites you want their paste event handlers to still work. In the options
 for this extension, you can add an exclusion pattern that matches the site's
 URL, which will prevent this extension from running on that site, and thereby
 allowing the paste event to occur.
+
+For backwards compatibility with older versions of this extension, the default
+configuration is to blacklist all sites and whitelist a few. I think the
+opposite is a better solution: whitelist all sites and blacklist only the
+troublesome ones.
