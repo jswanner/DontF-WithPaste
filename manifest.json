@@ -10,7 +10,7 @@
     }
   ],
   "description": "Prevents the blocking of copying from & pasting into input fields",
-  "homepage_url": "https://github.com/jswanner/DontFuckWithPaste",
+  "homepage_url": "https://github.com/aaronraimist/DontFuckWithPaste",
   "manifest_version": 2,
   "name": "Don't Fuck With Paste",
   "options_ui": {
@@ -20,7 +20,7 @@
   "permissions": [
     "storage"
   ],
-  "version": "1.1.1",
+  "version": "1.1.2",
   "applications": {
     "gecko": {
       "id": "DontFuckWithPaste@raim.ist"
