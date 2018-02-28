@@ -20,7 +20,7 @@
   "permissions": [
     "storage"
   ],
-  "version": "1.1",
+  "version": "1.1.1",
   "applications": {
     "gecko": {
       "id": "DontFuckWithPaste@raim.ist"
