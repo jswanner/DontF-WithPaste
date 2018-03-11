@@ -34,5 +34,6 @@ chrome.storage.sync.get(window.defaultValues, function({exclude, include}) {
     document.addEventListener('keydown', allowDefaultCtrlAction, true);
     document.addEventListener('mousedown', allowDefaultRightClickAction, true);
     document.addEventListener('contextmenu', allowDefaultAction, true);
+    document.addEventListener('selectstart', allowDefaultAction, true);
   }
 });
