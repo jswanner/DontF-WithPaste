@@ -2,7 +2,7 @@ function alertOnCtrl(e) {
     var keyCode = event.keyCode || e.which;
     var CTRL_KEY_CODE = 17;
 
-    if (parseInt(keyCode) == CTRL_KEY_CODE) {
+    if (parseInt(keyCode) === CTRL_KEY_CODE) {
       alert("ctrl shortcuts are blocked");
     }
 
@@ -10,7 +10,7 @@ function alertOnCtrl(e) {
 }
 
 window.onload = function(){
-  var preventEvent = function(e){ e.preventDefault(); }
+  var preventEvent = function(e){ e.preventDefault(); };
 
   document.getElementById('property').onpaste = preventEvent;
   document.getElementById('property').oncopy = preventEvent;
