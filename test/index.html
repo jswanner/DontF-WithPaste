@@ -9,7 +9,7 @@
     <p>(This is a form in the root document.)</p>
     <form>
       <p>Go ahead, try to cut, copy or paste:</p>
-      <input id="attribute" type="text" oncopy="return false;" onpaste="return false;" oncut="return false;" onkeydown="return noCTRL(event);"/>
+      <input id="attribute" type="text" oncopy="return false;" onpaste="return false;" oncut="return false;" onkeydown="return alertOnCtrl(event);"/>
       <input id="property" type="text" />
       <input id="listener" type="text" />
     </form>

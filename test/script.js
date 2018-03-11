@@ -1,22 +1,24 @@
-function noCTRL(e) {
-    var code = (document.all) ? event.keyCode : e.which;
+function alertOnCtrl(e) {
+    var keyCode = event.keyCode || e.which;
+    var CTRL_KEY_CODE = 17;
 
-    var msg = "Copy and Paste is not allowed.";
-    if (parseInt(code) == 17) //CTRL
-    {
-        //alert(msg);
-        window.event.returnValue = false;
+    if (parseInt(keyCode) == CTRL_KEY_CODE) {
+      alert("ctrl shortcuts are blocked");
     }
+
+    return true;
 }
 
 window.onload = function(){
-  var prevent = function(e){ e.preventDefault(); }
+  var preventEvent = function(e){ e.preventDefault(); }
 
-  document.getElementById('property').onpaste = prevent;
-  document.getElementById('property').oncopy = prevent;
-  document.getElementById('property').oncut = prevent;
+  document.getElementById('property').onpaste = preventEvent;
+  document.getElementById('property').oncopy = preventEvent;
+  document.getElementById('property').oncut = preventEvent;
+  document.getElementById('property').onkeydown = alertOnCtrl;
 
-  document.getElementById('listener').addEventListener('copy', prevent, false);
-  document.getElementById('listener').addEventListener('paste', prevent, false);
-  document.getElementById('listener').addEventListener('cut', prevent, false);
+  document.getElementById('listener').addEventListener('copy', preventEvent, false);
+  document.getElementById('listener').addEventListener('paste', preventEvent, false);
+  document.getElementById('listener').addEventListener('cut', preventEvent, false);
+  document.getElementById('listener').addEventListener('keydown', alertOnCtrl, false);
 };
