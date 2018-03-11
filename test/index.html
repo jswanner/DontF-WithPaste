@@ -3,13 +3,15 @@
     <title>I'm fucking with paste</title>
     <script src="script.js"></script>
   </head>
-  <body>
+  <body onselectstart="return false;">
     <p>The input boxes below doesn't let you copy or paste stuff in it; every
     time a page like this is created, a kitten is killed.</p>
     <p>(This is a form in the root document.)</p>
     <form>
-      <p>Go ahead, try to paste:</p>
-      <input id="attribute" type="text" oncopy="return false;" onpaste="return false;" />
+      <p>Go ahead, try to cut, copy or paste:</p>
+      <input id="attribute" type="text" oncopy="return false;" onpaste="return false;" oncut="return false;"
+             onkeydown="return alertOnCtrl(event);"
+             onmousedown="return alertOnRightClick(event);" oncontextmenu="return false;"/>
       <input id="property" type="text" />
       <input id="listener" type="text" />
     </form>
