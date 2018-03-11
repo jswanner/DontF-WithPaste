@@ -28,10 +28,12 @@ window.onload = function(){
   document.getElementById('property').oncut = preventEvent;
   document.getElementById('property').onkeydown = alertOnCtrl;
   document.getElementById('property').onmousedown = alertOnRightClick;
+  document.getElementById('property').oncontextmenu = preventEvent;
 
   document.getElementById('listener').addEventListener('copy', preventEvent, false);
   document.getElementById('listener').addEventListener('paste', preventEvent, false);
   document.getElementById('listener').addEventListener('cut', preventEvent, false);
   document.getElementById('listener').addEventListener('keydown', alertOnCtrl, false);
   document.getElementById('listener').addEventListener('mousedown', alertOnRightClick, false);
+  document.getElementById('listener').addEventListener('contextmenu', preventEvent, false);
 };
