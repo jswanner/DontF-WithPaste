@@ -1,12 +1,12 @@
 function alertOnCtrl(e) {
-    var keyCode = event.keyCode || e.which;
-    var CTRL_KEY_CODE = 17;
+  var keyCode = event.keyCode || e.which;
+  var CTRL_KEY_CODE = 17;
 
-    if (parseInt(keyCode) === CTRL_KEY_CODE) {
-      alert("ctrl shortcuts are blocked");
-    }
+  if (parseInt(keyCode) === CTRL_KEY_CODE) {
+    alert("ctrl shortcuts are blocked");
+  }
 
-    return true;
+  return true;
 }
 
 window.onload = function(){

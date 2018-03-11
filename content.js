@@ -1,6 +1,17 @@
-const allowEvent = function(e){
+const doNotPropagate = function(e){
   e.stopImmediatePropagation();
   return true;
+};
+
+const doNotPropagateCtrl = function(e){
+  if (e.type !== "keydown") return false;
+
+  var keyCode = e.which;
+  var CTRL_KEY_CODE = 17;
+
+  if (parseInt(keyCode) !== CTRL_KEY_CODE) return false;
+
+  return doNotPropagate(e);
 };
 
 chrome.storage.sync.get(window.defaultValues, function({exclude, include}) {
@@ -9,9 +20,9 @@ chrome.storage.sync.get(window.defaultValues, function({exclude, include}) {
   const location = window.location.href;
 
   if (includes.test(location) && !excludes.test(location)) {
-    document.addEventListener('cut', allowEvent, true);
-    document.addEventListener('copy', allowEvent, true);
-    document.addEventListener('paste', allowEvent, true);
-    document.addEventListener('keydown', allowEvent, true);
+    document.addEventListener('cut', doNotPropagate, true);
+    document.addEventListener('copy', doNotPropagate, true);
+    document.addEventListener('paste', doNotPropagate, true);
+    document.addEventListener('keydown', doNotPropagateCtrl, true);
   }
 });
