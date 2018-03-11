@@ -6,10 +6,17 @@ const doNotPropagate = function(e){
 const doNotPropagateCtrl = function(e){
   if (e.type !== "keydown") return false;
 
-  var keyCode = e.which;
-  var CTRL_KEY_CODE = 17;
+  const CTRL_KEY_CODE = 17;
+  if (parseInt(e.keyCode) !== CTRL_KEY_CODE) return false;
 
-  if (parseInt(keyCode) !== CTRL_KEY_CODE) return false;
+  return doNotPropagate(e);
+};
+
+const doNotPropagateRightClick = function(e){
+  if (e.type !== "mousedown") return false;
+
+  const RIGHT_CLICK = 2;
+  if (e.button !== RIGHT_CLICK) return false;
 
   return doNotPropagate(e);
 };
@@ -24,5 +31,6 @@ chrome.storage.sync.get(window.defaultValues, function({exclude, include}) {
     document.addEventListener('copy', doNotPropagate, true);
     document.addEventListener('paste', doNotPropagate, true);
     document.addEventListener('keydown', doNotPropagateCtrl, true);
+    document.addEventListener('mousedown', doNotPropagateRightClick, true);
   }
 });
