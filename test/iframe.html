@@ -2,7 +2,8 @@
 <p>(This is a form inside of an iframe.)</p>
 <form>
   <label>Go ahead, try to copy or paste:</label>
-  <input id="attribute" type="text" oncopy="return false;" onpaste="return false;" oncut="return false;" onkeydown="return alertOnCtrl(event);"/>
+  <input id="attribute" type="text" oncopy="return false;" onpaste="return false;" oncut="return false;"
+         onkeydown="return alertOnCtrl(event);" onmousedown="return alertOnRightClick(event);"/>
   <input id="property" type="text" />
   <input id="listener" type="text" />
 </form>
