@@ -24,4 +24,4 @@ There are some sites that do helpful things with copy and paste events, and for
 those sites you want their event handlers to still work. In the options
 for this extension, you can add an exclusion pattern that matches the site's
 URL, which will prevent this extension from running on that site, and thereby
-allowing the paste event to occur.
+allowing the site's own event actions to occur.
