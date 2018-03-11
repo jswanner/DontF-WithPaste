@@ -14,7 +14,7 @@ paste into a text box.
 ## Solution
 
 This is a dead simple Google Chrome extension that removes copy, cut and paste
-blocking. It also removes more blocking of related features such as
+blocking. It also removes blocking of related features such as
 Ctrl key shortcuts, right-clicking, selecting areas to copy, 
 and the browser context menu.
 
