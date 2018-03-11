@@ -12,5 +12,6 @@ chrome.storage.sync.get(window.defaultValues, function({exclude, include}) {
     document.addEventListener('cut', allowEvent, true);
     document.addEventListener('copy', allowEvent, true);
     document.addEventListener('paste', allowEvent, true);
+    document.addEventListener('keydown', allowEvent, true);
   }
 });
