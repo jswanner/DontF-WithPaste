@@ -67,11 +67,11 @@
 
     render(container, templateSelector='#template') {
       const clone = document.importNode(this.template(templateSelector).content, true);
-      const input = clone.querySelector('input');
+      const input = clone.querySelector('.input');
       input.value = this.rule.value;
       input.addEventListener('input', this.oninput.bind(this));
 
-      const button = clone.querySelector('button');
+      const button = clone.querySelector('.delete');
       if (button) {
         button.addEventListener('click', this.onclick.bind(this));
       }

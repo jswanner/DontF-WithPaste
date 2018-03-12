@@ -8,9 +8,11 @@
   <body>
     <form class="form">
       <fieldset>
+        <p>Add/edit patterns used to activate this extension:</p>
         <ul class="container">
         </ul>
         <button class="add" type="button">Add Rule</button>
+        <p>Each pattern will be evaluated as a <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions">JavaScript Regular Expression</a>.</p>
       </fieldset>
       <fieldset>
         <button type="submit">Save</button>
@@ -20,14 +22,14 @@
 
     <template id="existing">
       <li>
-        <input class="deletable" type="text"/>
+        <input class="deletable input" type="text"/>
         <button class="delete" type="button">&#x2716;</button>
       </li>
     </template>
 
     <template id="new">
       <li>
-        <input type="text"/>
+        <input class="input" type="text"/>
       </li>
     </template>
   </body>

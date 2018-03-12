@@ -21,6 +21,12 @@ fieldset + fieldset {
   border-top: 1px solid #D2D2D2;
 }
 
+img {
+  height: 14px;
+  vertical-align: middle;
+  width: 14px;
+}
+
 input {
   width: 99%;
 }
@@ -38,6 +44,15 @@ p {
   font-size: smaller;
   line-height: 14px;
   margin: 0;
+}
+
+.inline {
+  display: inline-block;
+  margin-right: 1em;
+}
+
+button + p {
+  margin-top: 1em;
 }
 
 ul {

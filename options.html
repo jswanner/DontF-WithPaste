@@ -8,18 +8,25 @@
   <body>
     <form class="form">
       <fieldset>
+        <p>This extension will be active for sites that match any of the following patterns:</p>
         <ul class="container">
         </ul>
         <button class="add" type="button">Add Rule</button>
+        <p>Each pattern will be evaluated as a <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions">JavaScript Regular Expression</a>.</p>
       </fieldset>
       <fieldset>
         <button type="submit">Save</button>
+      </fieldset>
+      <fieldset>
+        <label>Extension Icon Legend</label>
+        <p class="inline"><img alt="active icon" src="clipboard-active.png" /> - active on current tab</p>
+        <p class="inline"><img alt="inactive icon" src="clipboard-inactive.png" /> - inactive on current tab</p>
       </fieldset>
     </form>
 
     <template id="template">
       <li>
-        <input class="deletable" type="text"/>
+        <input class="deletable input" type="text"/>
         <button class="delete" type="button">&#x2716;</button>
       </li>
     </template>
