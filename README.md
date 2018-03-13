@@ -16,15 +16,21 @@ paste into a text box.
 This is a dead simple Google Chrome extension that removes copy and paste
 blocking.
 
-## Configuration
+## Usage
 
-There are some sites that do helpful things with copy and paste events, and for
-those sites you want their paste event handlers to still work. In the options
-for this extension, you can add an exclusion pattern that matches the site's
-URL, which will prevent this extension from running on that site, and thereby
-allowing the paste event to occur.
+The easiest way to add a site to the blacklist is to click on the extension
+icon ![inactive
+icon](https://raw.githubusercontent.com/jswanner/DontFuckWithPaste/09339b4f43d5bac9ddbdeea75051c6d9c017951f/clipboard-inactive-32.png),
+then optionally edit the auto-generated pattern, lastly click "Save":
 
-For backwards compatibility with older versions of this extension, the default
-configuration is to blacklist all sites and whitelist a few. I think the
-opposite is a better solution: whitelist all sites and blacklist only the
-troublesome ones.
+![New pattern dialog
+example](https://raw.githubusercontent.com/jswanner/DontFuckWithPaste/73e5d11eba02213ae28ac0ced28f54a1d1af6a09/dialog-example.png)
+
+After that, the extension icon should now be blue, meaning the extension is
+active for your current tab: ![active
+icon](https://raw.githubusercontent.com/jswanner/DontFuckWithPaste/73e5d11eba02213ae28ac0ced28f54a1d1af6a09/clipboard-active-32.png)
+
+## Version 2.0 Upgrade
+
+To read about the 2.0 upgrade, see: [the wiki
+page](https://github.com/jswanner/DontFuckWithPaste/wiki/Version-2.0).
