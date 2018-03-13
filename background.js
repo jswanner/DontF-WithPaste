@@ -24,8 +24,20 @@
     });
   };
 
-  chrome.runtime.onInstalled.addListener(({ reason }) => {
-    if (reason === 'update') {
+  chrome.runtime.onInstalled.addListener(({ previousVersion, reason }) => {
+    if (reason === 'update' && previousVersion == '1.1') {
+      DFWP.storage.get({ include: '' }, ({ include }) => {
+        fetchRules(() => {
+          include.split('\n').forEach(value => {
+            if (value !== '.*') {
+              const rule = new DFWP.Rule(value);
+              rules.add(rule);
+            }
+          });
+          DFWP.storage.set({ rules: rules.serialize() });
+        });
+      });
+
       chrome.notifications.create('updated to 2.0', {
         iconUrl: 'clipboard-active.png',
         message: 'Version 2.0 is very different, click to learn more.',
