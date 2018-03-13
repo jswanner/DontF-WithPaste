@@ -3,13 +3,14 @@ const allowCopyAndPaste = function(e){
   return true;
 };
 
-chrome.storage.sync.get(window.defaultValues, function({exclude, include}) {
-  const excludes = new RegExp(exclude.split('\n').join('|'));
-  const includes = new RegExp(include.split('\n').join('|'));
-  const location = window.location.href;
-
-  if (includes.test(location) && !excludes.test(location)) {
+chrome.runtime.onMessage.addListener(({ active }) => {
+  if (active) {
     document.addEventListener('copy', allowCopyAndPaste, true);
     document.addEventListener('paste', allowCopyAndPaste, true);
+  } else {
+    document.removeEventListener('copy', allowCopyAndPaste, true);
+    document.removeEventListener('paste', allowCopyAndPaste, true);
   }
 });
+
+chrome.runtime.sendMessage({ didLoad: true });
