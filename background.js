@@ -1,8 +1,8 @@
 (function() {
   let rules = new DFWP.Rules();
 
-  const checkIfActive = () => {
-    chrome.tabs.query({active: true}, ([tab, ...rest]) => {
+  const checkIfActive = (tabId) => {
+    chrome.tabs.get(tabId, tab => {
       const match = rules.some((r) => r.test(tab.url));
 
       if (match) {
@@ -59,15 +59,21 @@
 
   chrome.runtime.onMessage.addListener(({ didLoad }) => {
     if (didLoad) {
-      checkIfActive();
+      chrome.tabs.query({active: true, windowId: chrome.windows.WINDOW_ID_CURRENT}, ([tab]) => {
+        checkIfActive(tab.id);
+      });
     }
   });
 
   chrome.storage.onChanged.addListener(() => {
-    fetchRules(checkIfActive);
+    fetchRules(() => {
+      chrome.tabs.query({active: true}, ([tab]) => {
+        checkIfActive(tab.id);
+      });
+    })
   });
 
-  chrome.tabs.onActivated.addListener(checkIfActive);
+  chrome.tabs.onActivated.addListener(({ tabId }) => checkIfActive(tabId));
 
   fetchRules();
 })();
