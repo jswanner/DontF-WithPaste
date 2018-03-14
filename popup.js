@@ -19,7 +19,7 @@
     DFWP.storage.get({ rules: [] }, ({ rules: values }) => {
       rules = DFWP.Rules.deserialize(values);
 
-      chrome.tabs.query({active: true}, ([tab, ...rest]) => {
+      chrome.tabs.query({active: true, windowId: chrome.windows.WINDOW_ID_CURRENT}, ([tab, ...rest]) => {
         const addHandler = () => {
           const rule = new DFWP.Rule(new URL(tab.url).origin);
           rules.add(rule);
