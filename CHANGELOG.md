@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
+## [2.0] - 2018-03-13
 ### Changed
 - Switch to just blacklist of sites to run on
 
@@ -15,5 +15,6 @@ All notable changes to this project will be documented in this file.
 - This CHANGELOG file
 - Copy event blocking prevention
 
-[Unreleased]: https://github.com/jswanner/DontFuckWithPaste/compare/v1.1...HEAD
+[Unreleased]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.0...HEAD
+[2.0]: https://github.com/jswanner/DontFuckWithPaste/compare/v1.1...v2.0
 [1.1]: https://github.com/jswanner/DontFuckWithPaste/compare/v1.0...v1.1
