@@ -36,10 +36,12 @@
         }
 
         const remove = document.querySelector('.delete');
-        remove.addEventListener('click', event => {
-          DFWP.storage.set({ rules: rules.serialize() });
-          window.close();
-        });
+        if (remove) {
+          remove.addEventListener('click', event => {
+            DFWP.storage.set({ rules: rules.serialize() });
+            window.close();
+          });
+        }
       });
     });
 
