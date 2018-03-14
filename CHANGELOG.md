@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 No changes
 
+## [2.3] - 2018-03-14
+### Changed
+- Fix multi-window support
+
 ## [2.2] - 2018-03-14
 ### Changed
 - Fix Popup tab URL lookup
@@ -27,7 +31,8 @@ No changes
 - This CHANGELOG file
 - Copy event blocking prevention
 
-[Unreleased]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.2...HEAD
+[Unreleased]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.3...HEAD
+[2.3]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.2...v2.3
 [2.2]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.1...v2.2
 [2.1]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.0...v2.1
 [2.0]: https://github.com/jswanner/DontFuckWithPaste/compare/v1.1...v2.0
