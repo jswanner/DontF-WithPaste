@@ -1,7 +1,13 @@
 window.onload = function(){
-  var preventCopyAndPaste = function(e){ e.preventDefault(); }
-  document.getElementById('property').onpaste = preventCopyAndPaste;
-  document.getElementById('property').oncopy = preventCopyAndPaste;
-  document.getElementById('listener').addEventListener('copy', preventCopyAndPaste, false);
-  document.getElementById('listener').addEventListener('paste', preventCopyAndPaste, false);
+  const preventDefault = e => e.preventDefault();
+
+  const listener = document.getElementById('listener');
+  const property = document.getElementById('property');
+
+  listener.addEventListener('copy', preventDefault, false);
+  listener.addEventListener('cut', preventDefault, false);
+  listener.addEventListener('paste', preventDefault, false);
+  property.oncopy = preventDefault;
+  property.oncut = preventDefault;
+  property.onpaste = preventDefault;
 };

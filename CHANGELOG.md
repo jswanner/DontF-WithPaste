@@ -3,6 +3,7 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+- Prevent blocking of cut events
 - Escape periods in auto-generated patterns
 
 ## [2.3] - 2018-03-14

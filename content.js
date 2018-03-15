@@ -1,15 +1,17 @@
-const allowCopyAndPaste = function(e){
+const forceBrowserDefault = function(e){
   e.stopImmediatePropagation();
   return true;
 };
 
 chrome.runtime.onMessage.addListener(({ active }) => {
   if (active) {
-    document.addEventListener('copy', allowCopyAndPaste, true);
-    document.addEventListener('paste', allowCopyAndPaste, true);
+    document.addEventListener('copy', forceBrowserDefault, true);
+    document.addEventListener('cut', forceBrowserDefault, true);
+    document.addEventListener('paste', forceBrowserDefault, true);
   } else {
-    document.removeEventListener('copy', allowCopyAndPaste, true);
-    document.removeEventListener('paste', allowCopyAndPaste, true);
+    document.removeEventListener('copy', forceBrowserDefault, true);
+    document.removeEventListener('cut', forceBrowserDefault, true);
+    document.removeEventListener('paste', forceBrowserDefault, true);
   }
 });
 
