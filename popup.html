@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <script src="dfwp.js" type="text/javascript"></script>
+    <script src="popup.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <form class="form">
+      <fieldset>
+        <p>Add/edit patterns used to activate this extension:</p>
+        <ul class="container">
+        </ul>
+        <button class="add" type="button">Add Rule</button>
+        <p>Each pattern will be evaluated as a <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions" target="_blank">JavaScript Regular Expression</a>.</p>
+      </fieldset>
+      <fieldset>
+        <button type="submit">Save</button>
+        <button class="cancel" type="button">Cancel</button>
+      </fieldset>
+    </form>
+
+    <template id="existing">
+      <li>
+        <input class="deletable input" type="text"/>
+        <button class="delete" type="button">&#x2716;</button>
+      </li>
+    </template>
+
+    <template id="new">
+      <li>
+        <input class="input" type="text"/>
+      </li>
+    </template>
+  </body>
+</html>

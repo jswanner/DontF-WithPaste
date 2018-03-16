@@ -1,0 +1,61 @@
+body {
+  font-size: 14px;
+  margin: 0;
+  width: 40em;
+}
+
+.delete {
+  height: 1.5em;
+  min-height: inherit;
+  min-width: inherit;
+  padding: 0;
+  width: 1.5em;
+}
+
+fieldset {
+  border: 0 none;
+  padding: 1em;
+}
+
+fieldset + fieldset {
+  border-top: 1px solid #D2D2D2;
+}
+
+img {
+  height: 14px;
+  vertical-align: middle;
+  width: 14px;
+}
+
+input {
+  width: 99%;
+}
+
+.deletable {
+  width: 94%;
+}
+
+label {
+  display: block;
+}
+
+p {
+  color: #888;
+  font-size: smaller;
+  line-height: 14px;
+  margin: 0;
+}
+
+.inline {
+  display: inline-block;
+  margin-right: 1em;
+}
+
+button + p {
+  margin-top: 1em;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
