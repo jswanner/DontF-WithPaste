@@ -41,9 +41,10 @@ label {
 
 p {
   color: #888;
-  font-size: smaller;
+  font-size: small;
   line-height: 14px;
   margin: 0;
+  font-family: Helvetica, sans-serif;
 }
 
 .inline {
