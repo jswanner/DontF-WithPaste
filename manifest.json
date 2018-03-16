@@ -21,7 +21,7 @@
     }
   ],
   "description": "Prevents the blocking of copying from & pasting into input fields",
-  "homepage_url": "https://github.com/jswanner/DontFuckWithPaste",
+  "homepage_url": "https://github.com/aaronraimist/DontFuckWithPaste",
   "icons": {
     "48": "clipboard-inactive-48.png",
     "128": "clipboard-inactive-128.png"
@@ -33,9 +33,13 @@
     "page": "options.html"
   },
   "permissions": [
-    "notifications",
     "storage",
     "tabs"
   ],
-  "version": "2.3"
+  "version": "2.3.1",
+  "applications": {
+    "gecko": {
+      "id": "DontFuckWithPaste@raim.ist"
+    }
+  }
 }

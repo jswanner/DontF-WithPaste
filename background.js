@@ -25,7 +25,7 @@
   };
 
   chrome.runtime.onInstalled.addListener(({ previousVersion, reason }) => {
-    if (reason === 'update' && previousVersion == '1.1') {
+    if (reason === 'update' && previousVersion == '1.1.2') {
       DFWP.storage.get({ include: '' }, ({ include }) => {
         fetchRules(() => {
           include.split('\n').forEach(value => {
@@ -38,22 +38,9 @@
         });
       });
 
-      chrome.notifications.create('updated to 2.0', {
-        iconUrl: 'clipboard-active.png',
-        message: 'Version 2.0 is very different, click to learn more.',
-        requireInteraction: true,
-        title: "Don't Fuck With Paste 2.0",
-        type: 'basic'
-      }, (notificationId) => {
-        chrome.notifications.onClicked.addListener(() => {
-          chrome.notifications.clear(notificationId);
-
-          chrome.tabs.create({
-            url: 'https://github.com/jswanner/DontFuckWithPaste/wiki/Version-2.0'
-          });
-        });
+      chrome.tabs.create({
+        url: "https://github.com/aaronraimist/DontFuckWithPaste/wiki/About-Version-2-of-Don't-Fuck-With-Paste"
       });
-
     }
   });
 
