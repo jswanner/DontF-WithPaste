@@ -3,6 +3,7 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+- Remove upgrade notification
 - Prevent blocking of cut events
 - Escape periods in auto-generated patterns
 

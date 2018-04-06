@@ -37,23 +37,6 @@
           DFWP.storage.set({ rules: rules.serialize() });
         });
       });
-
-      chrome.notifications.create('updated to 2.0', {
-        iconUrl: 'clipboard-active.png',
-        message: 'Version 2.0 is very different, click to learn more.',
-        requireInteraction: true,
-        title: "Don't Fuck With Paste 2.0",
-        type: 'basic'
-      }, (notificationId) => {
-        chrome.notifications.onClicked.addListener(() => {
-          chrome.notifications.clear(notificationId);
-
-          chrome.tabs.create({
-            url: 'https://github.com/jswanner/DontFuckWithPaste/wiki/Version-2.0'
-          });
-        });
-      });
-
     }
   });
 
