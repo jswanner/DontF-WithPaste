@@ -42,7 +42,7 @@
     }
 
     serialize() {
-      return this.array.map((r) => r.value);
+      return this.array.map(r => r.value).filter(v => v.length);
     }
 
     some(cb) {

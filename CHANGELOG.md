@@ -3,6 +3,7 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+- Prevent saving of empty rules
 - Prevent empty rules from matching all sites
 - Remove upgrade notification
 - Prevent blocking of cut events
