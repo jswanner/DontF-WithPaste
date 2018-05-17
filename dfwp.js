@@ -13,7 +13,7 @@
     }
 
     get pattern() {
-      return new RegExp(this.value);
+      return new RegExp(this.value || '(?=a)b');
     }
 
     test(string) {
