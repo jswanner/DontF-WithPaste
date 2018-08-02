@@ -50,8 +50,10 @@
 
   chrome.storage.onChanged.addListener(() => {
     fetchRules(() => {
-      chrome.tabs.query({active: true}, ([tab]) => {
-        checkIfActive(tab.id);
+      chrome.tabs.query({active: true}, tabs => {
+        tabs.forEach(tab => {
+          checkIfActive(tab.id);
+        });
       });
     })
   });
