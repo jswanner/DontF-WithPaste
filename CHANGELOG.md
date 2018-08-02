@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 No changes
 
+## [2.5] - 2018-08-02
+### Changed
+- Run activeness check on all active tabs on rule change
+
 ## [2.4] - 2018-05-17
 ### Changed
 - Prevent saving of empty rules
@@ -39,7 +43,8 @@ No changes
 - This CHANGELOG file
 - Copy event blocking prevention
 
-[Unreleased]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.4...HEAD
+[Unreleased]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.5...HEAD
+[2.5]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.4...v2.5
 [2.4]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.3...v2.4
 [2.3]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.2...v2.3
 [2.2]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.1...v2.2
