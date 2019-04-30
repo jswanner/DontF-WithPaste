@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 - Link to options page from popup
+- Reword "Add Rule" button to "Add Pattern" to match other verbiage
 
 ## [2.5] - 2018-08-02
 ### Changed
