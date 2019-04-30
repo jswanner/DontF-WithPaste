@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
-No changes
+- Link to options page from popup
 
 ## [2.5] - 2018-08-02
 ### Changed

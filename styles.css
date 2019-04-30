@@ -51,7 +51,7 @@ p {
   margin-right: 1em;
 }
 
-button + p {
+* + p {
   margin-top: 1em;
 }
 
