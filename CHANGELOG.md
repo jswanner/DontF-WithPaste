@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+No changes
+
+## [2.6] - 2019-04-30
+### Changed
 - Link to options page from popup
 - Reword "Add Rule" button to "Add Pattern" to match other verbiage
 
@@ -44,7 +48,8 @@ All notable changes to this project will be documented in this file.
 - This CHANGELOG file
 - Copy event blocking prevention
 
-[Unreleased]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.5...HEAD
+[Unreleased]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.6...HEAD
+[2.6]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.5...v2.6
 [2.5]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.4...v2.5
 [2.4]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.3...v2.4
 [2.3]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.2...v2.3
