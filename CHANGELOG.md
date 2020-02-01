@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
-No changes
+- Access extension APIs through browser or chrome
 
 ## [2.6] - 2019-04-30
 ### Changed

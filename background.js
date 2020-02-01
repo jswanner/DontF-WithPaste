@@ -1,18 +1,19 @@
 (function() {
+  const browser = DFWP.browser;
   let rules = new DFWP.Rules();
 
   const checkIfActive = (tabId) => {
-    chrome.tabs.get(tabId, tab => {
+    browser.tabs.get(tabId, tab => {
       const match = rules.some((r) => r.test(tab.url));
 
       if (match) {
-        chrome.browserAction.setIcon({ path: 'clipboard-active-32.png' });
-        chrome.browserAction.setTitle({ title: "Don't Fuck With Paste (active)" });
-        chrome.tabs.sendMessage(tab.id, { active: true });
+        browser.browserAction.setIcon({ path: 'clipboard-active-32.png' });
+        browser.browserAction.setTitle({ title: "Don't Fuck With Paste (active)" });
+        browser.tabs.sendMessage(tab.id, { active: true });
       } else {
-        chrome.browserAction.setIcon({ path: 'clipboard-inactive-32.png' });
-        chrome.browserAction.setTitle({ title: "Don't Fuck With Paste (inactive)" });
-        chrome.tabs.sendMessage(tab.id, { active: false });
+        browser.browserAction.setIcon({ path: 'clipboard-inactive-32.png' });
+        browser.browserAction.setTitle({ title: "Don't Fuck With Paste (inactive)" });
+        browser.tabs.sendMessage(tab.id, { active: false });
       }
     });
   };
@@ -24,7 +25,7 @@
     });
   };
 
-  chrome.runtime.onInstalled.addListener(({ previousVersion, reason }) => {
+  browser.runtime.onInstalled.addListener(({ previousVersion, reason }) => {
     if (reason === 'update' && previousVersion == '1.1') {
       DFWP.storage.get({ include: '' }, ({ include }) => {
         fetchRules(() => {
@@ -40,17 +41,17 @@
     }
   });
 
-  chrome.runtime.onMessage.addListener(({ didLoad }) => {
+  browser.runtime.onMessage.addListener(({ didLoad }) => {
     if (didLoad) {
-      chrome.tabs.query({active: true, windowId: chrome.windows.WINDOW_ID_CURRENT}, ([tab]) => {
+      browser.tabs.query({active: true, windowId: browser.windows.WINDOW_ID_CURRENT}, ([tab]) => {
         checkIfActive(tab.id);
       });
     }
   });
 
-  chrome.storage.onChanged.addListener(() => {
+  browser.storage.onChanged.addListener(() => {
     fetchRules(() => {
-      chrome.tabs.query({active: true}, tabs => {
+      browser.tabs.query({active: true}, tabs => {
         tabs.forEach(tab => {
           checkIfActive(tab.id);
         });
@@ -58,7 +59,7 @@
     })
   });
 
-  chrome.tabs.onActivated.addListener(({ tabId }) => checkIfActive(tabId));
+  browser.tabs.onActivated.addListener(({ tabId }) => checkIfActive(tabId));
 
   fetchRules();
 })();

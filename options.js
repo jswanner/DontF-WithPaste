@@ -27,7 +27,7 @@
       new DFWP.RuleView(rule, rules).render(container);
     });
 
-    chrome.storage.onChanged.addListener(() => {
+    DFWP.browser.storage.onChanged.addListener(() => {
       displayRules(container);
     });
 

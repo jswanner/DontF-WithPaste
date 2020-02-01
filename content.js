@@ -3,7 +3,7 @@ const forceBrowserDefault = function(e){
   return true;
 };
 
-chrome.runtime.onMessage.addListener(({ active }) => {
+DFWP.browser.runtime.onMessage.addListener(({ active }) => {
   if (active) {
     document.addEventListener('copy', forceBrowserDefault, true);
     document.addEventListener('cut', forceBrowserDefault, true);
@@ -15,4 +15,4 @@ chrome.runtime.onMessage.addListener(({ active }) => {
   }
 });
 
-chrome.runtime.sendMessage({ didLoad: true });
+DFWP.browser.runtime.sendMessage({ didLoad: true });

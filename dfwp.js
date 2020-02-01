@@ -1,10 +1,16 @@
 (function() {
   window.DFWP = window.DFWP || {};
 
-  if (chrome.storage.sync) {
-    DFWP.storage = chrome.storage.sync;
+  try {
+    DFWP.browser = browser;
+  } catch {
+    DFWP.browser = chrome;
+  }
+
+  if (DFWP.browser.storage.sync) {
+    DFWP.storage = DFWP.browser.storage.sync;
   } else {
-    DFWP.storage = chrome.storage.local;
+    DFWP.storage = DFWP.browser.storage.local;
   }
 
   DFWP.Rule = class Rule {
