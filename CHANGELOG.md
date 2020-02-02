@@ -3,6 +3,7 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+- Use runtime.openOptionsPage to open options page
 - Access extension APIs through browser or chrome
 
 ## [2.6] - 2019-04-30

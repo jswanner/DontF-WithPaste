@@ -4,6 +4,7 @@
     const cancel = document.querySelector('.cancel');
     const container = document.querySelector('.container');
     const form = document.querySelector('.form');
+    const options = document.querySelector('.options');
     let rules = new DFWP.Rules();
 
     form.addEventListener('submit', event => {
@@ -14,6 +15,10 @@
 
     cancel.addEventListener('click', event => {
       window.close();
+    });
+
+    options.addEventListener('click', event => {
+      DFWP.browser.runtime.openOptionsPage();
     });
 
     DFWP.storage.get({ rules: [] }, ({ rules: values }) => {
