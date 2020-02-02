@@ -13,8 +13,16 @@ paste into a text box.
 
 ## Solution
 
-This is a dead simple Google Chrome extension that removes copy and paste
-blocking.
+This is a dead simple Google Chrome extension that removes copy, cut and paste
+blocking, by preventing sites from interfering with "copy", "cut", and "paste"
+browser events.
+
+This extension does not try to prevent a site from also interfering with
+keyboard shortcuts related to those browser actions (control-v, command-v,
+etc.), nor does this extension prevent sites from interfering with the
+"contextmenu" event (right click menu). For those super annoying sites that
+interfere with keyboard shortcuts and context menu, using Edit -> Paste from
+the browser's menu might be required.
 
 ## Usage
 
