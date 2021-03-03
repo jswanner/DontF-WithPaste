@@ -26,8 +26,8 @@ the browser's menu might be required.
 
 ## Usage
 
-The easiest way to add a site to the blacklist is to click on the extension
-icon ![inactive
+The easiest way to activate the extension for a given site is to click on the
+extension icon ![inactive
 icon](https://raw.githubusercontent.com/jswanner/DontFuckWithPaste/09339b4f43d5bac9ddbdeea75051c6d9c017951f/clipboard-inactive-32.png),
 then optionally edit the auto-generated pattern, lastly click "Save":
 
