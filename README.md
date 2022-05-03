@@ -55,3 +55,24 @@ what it's [not] doing with your data.
 
 To read more about the version 2 upgrade, see: [the wiki
 page](https://github.com/jswanner/DontFuckWithPaste/wiki/Version-2.0).
+
+## Bookmarklet
+
+If for some reason you prefer to use a [bookmarklet][] to accomplish the same
+goal, you can do so by adding a bookmark to the following URI:
+
+```js
+javascript:forceBrowserDefault=(e=>{e.stopImmediatePropagation();return true;});['copy','cut','paste'].forEach(e=>document.addEventListener(e,forceBrowserDefault,true));
+```
+
+![bookmarklet](https://user-images.githubusercontent.com/576853/166342567-e7ed37ce-e2be-442b-a6b3-c5705f92ac9f.png)
+![chrome bookmarks](https://user-images.githubusercontent.com/261/167724011-7b9a3fa5-ad1d-44eb-86b9-d396edcb17bf.png)
+
+Now if you encounter a problematic page, you can click on this bookmark (or
+enter a keyword like `dfwp` into the address bar) in order to liberate your
+clipboard once more. Using this method can also help to mitigate
+[fingerprinting][], even if you are using Chrome. Note: this will not prevent
+blocking of clipboard events in iframes.
+
+[bookmarklet]: https://en.wikipedia.org/wiki/Bookmarklet
+[fingerprinting]: https://en.wikipedia.org/wiki/Device_fingerprint#Browser_extensions
