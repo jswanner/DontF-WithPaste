@@ -55,3 +55,20 @@ what it's [not] doing with your data.
 
 To read more about the version 2 upgrade, see: [the wiki
 page](https://github.com/jswanner/DontFuckWithPaste/wiki/Version-2.0).
+
+## Not using Chrome?
+
+If you are using a non-Chromium-based browser, like some kind of savage, you can accomplish a similar level of un-fuckery using a [bookmarklet][].
+
+Add a bookmark to the following URI:
+
+```js
+javascript:forceBrowserDefault=(e=>{e.stopImmediatePropagation();return true});['copy','cut','paste'].forEach(o=>document.addEventListener(o,forceBrowserDefault,true));
+```
+
+![bookmarklet](https://user-images.githubusercontent.com/576853/166342567-e7ed37ce-e2be-442b-a6b3-c5705f92ac9f.png)
+
+Now if you encounter a problematic page, you can click on this bookmark (or enter a keyword like `dfwp` into the address bar) in order to liberate your clipboard once more. Using this method can also help to mitigate [fingerprinting][], even if you are using Chrome.
+
+[bookmarklet]: https://en.wikipedia.org/wiki/Bookmarklet
+[fingerprinting]: https://en.wikipedia.org/wiki/Device_fingerprint#Browser_extensions
