@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 No changes
 
+## [2.8] - 2022-05-13
+### Changed
+- Extension's name
+
 ## [2.7] - 2020-02-01
 ### Changed
 - Use runtime.openOptionsPage to open options page
@@ -53,7 +57,8 @@ No changes
 - This CHANGELOG file
 - Copy event blocking prevention
 
-[Unreleased]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.7...HEAD
+[Unreleased]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.8...HEAD
+[2.8]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.7...v2.8
 [2.7]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.6...v2.7
 [2.6]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.5...v2.6
 [2.5]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.4...v2.5
