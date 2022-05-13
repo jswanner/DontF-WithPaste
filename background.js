@@ -8,11 +8,11 @@
 
       if (match) {
         browser.browserAction.setIcon({ path: 'clipboard-active-32.png' });
-        browser.browserAction.setTitle({ title: "Don't Fuck With Paste (active)" });
+        browser.browserAction.setTitle({ title: "Don't F*** With Paste (active)" });
         browser.tabs.sendMessage(tab.id, { active: true });
       } else {
         browser.browserAction.setIcon({ path: 'clipboard-inactive-32.png' });
-        browser.browserAction.setTitle({ title: "Don't Fuck With Paste (inactive)" });
+        browser.browserAction.setTitle({ title: "Don't F*** With Paste (inactive)" });
         browser.tabs.sendMessage(tab.id, { active: false });
       }
     });
