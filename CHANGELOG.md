@@ -57,14 +57,14 @@ No changes
 - This CHANGELOG file
 - Copy event blocking prevention
 
-[Unreleased]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.8...HEAD
-[2.8]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.7...v2.8
-[2.7]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.6...v2.7
-[2.6]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.5...v2.6
-[2.5]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.4...v2.5
-[2.4]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.3...v2.4
-[2.3]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.2...v2.3
-[2.2]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.1...v2.2
-[2.1]: https://github.com/jswanner/DontFuckWithPaste/compare/v2.0...v2.1
-[2.0]: https://github.com/jswanner/DontFuckWithPaste/compare/v1.1...v2.0
-[1.1]: https://github.com/jswanner/DontFuckWithPaste/compare/v1.0...v1.1
+[Unreleased]: https://github.com/jswanner/DontF-WithPaste/compare/v2.8...HEAD
+[2.8]: https://github.com/jswanner/DontF-WithPaste/compare/v2.7...v2.8
+[2.7]: https://github.com/jswanner/DontF-WithPaste/compare/v2.6...v2.7
+[2.6]: https://github.com/jswanner/DontF-WithPaste/compare/v2.5...v2.6
+[2.5]: https://github.com/jswanner/DontF-WithPaste/compare/v2.4...v2.5
+[2.4]: https://github.com/jswanner/DontF-WithPaste/compare/v2.3...v2.4
+[2.3]: https://github.com/jswanner/DontF-WithPaste/compare/v2.2...v2.3
+[2.2]: https://github.com/jswanner/DontF-WithPaste/compare/v2.1...v2.2
+[2.1]: https://github.com/jswanner/DontF-WithPaste/compare/v2.0...v2.1
+[2.0]: https://github.com/jswanner/DontF-WithPaste/compare/v1.1...v2.0
+[1.1]: https://github.com/jswanner/DontF-WithPaste/compare/v1.0...v1.1

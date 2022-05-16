@@ -1,6 +1,6 @@
-# Don't fuck with copy and paste
+# Don't f*** with copy and paste
 
-[Don't Fuck With Paste - Chrome Web Store](https://chrome.google.com/webstore/detail/dont-f-with-paste/nkgllhigpcljnhoakjkgaieabnkmgdkb)
+[Don't F*** With Paste - Chrome Web Store](https://chrome.google.com/webstore/detail/dont-f-with-paste/nkgllhigpcljnhoakjkgaieabnkmgdkb)
 
 ## Background
 
@@ -28,15 +28,15 @@ the browser's menu might be required.
 
 The easiest way to activate the extension for a given site is to click on the
 extension icon ![inactive
-icon](https://raw.githubusercontent.com/jswanner/DontFuckWithPaste/09339b4f43d5bac9ddbdeea75051c6d9c017951f/clipboard-inactive-32.png),
+icon](https://raw.githubusercontent.com/jswanner/DontF-WithPaste/09339b4f43d5bac9ddbdeea75051c6d9c017951f/clipboard-inactive-32.png),
 then optionally edit the auto-generated pattern, lastly click "Save":
 
 ![New pattern dialog
-example](https://raw.githubusercontent.com/jswanner/DontFuckWithPaste/73e5d11eba02213ae28ac0ced28f54a1d1af6a09/dialog-example.png)
+example](https://raw.githubusercontent.com/jswanner/DontF-WithPaste/73e5d11eba02213ae28ac0ced28f54a1d1af6a09/dialog-example.png)
 
 After that, the extension icon should now be blue, meaning the extension is
 active for your current tab: ![active
-icon](https://raw.githubusercontent.com/jswanner/DontFuckWithPaste/73e5d11eba02213ae28ac0ced28f54a1d1af6a09/clipboard-active-32.png)
+icon](https://raw.githubusercontent.com/jswanner/DontF-WithPaste/73e5d11eba02213ae28ac0ced28f54a1d1af6a09/clipboard-active-32.png)
 
 ## Version 2 Upgrade
 
@@ -54,7 +54,7 @@ project, you can always read all the code to see how this extension works, and
 what it's [not] doing with your data.
 
 To read more about the version 2 upgrade, see: [the wiki
-page](https://github.com/jswanner/DontFuckWithPaste/wiki/Version-2.0).
+page](https://github.com/jswanner/DontF-WithPaste/wiki/Version-2.0).
 
 ## Bookmarklet
 
