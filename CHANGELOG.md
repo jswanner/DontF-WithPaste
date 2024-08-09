@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 No changes
 
+## [3.0] - 2024-08-09
+### Changed
+- Upgrade to manifest v3
+
 ## [2.9] - 2022-05-19
 ### Changed
 - Extension's URL
@@ -61,7 +65,8 @@ No changes
 - This CHANGELOG file
 - Copy event blocking prevention
 
-[Unreleased]: https://github.com/jswanner/DontF-WithPaste/compare/v2.9...HEAD
+[Unreleased]: https://github.com/jswanner/DontF-WithPaste/compare/v3.0...HEAD
+[3.0]: https://github.com/jswanner/DontF-WithPaste/compare/v2.9...v3.0
 [2.9]: https://github.com/jswanner/DontF-WithPaste/compare/v2.8...v2.9
 [2.8]: https://github.com/jswanner/DontF-WithPaste/compare/v2.7...v2.8
 [2.7]: https://github.com/jswanner/DontF-WithPaste/compare/v2.6...v2.7

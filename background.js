@@ -1,65 +1,49 @@
-(function() {
-  const browser = DFWP.browser;
-  let rules = new DFWP.Rules();
+import DFWP, { Rules } from "./dfwp.js";
+const { browser, storage } = DFWP;
+let rules = new Rules();
 
-  const checkIfActive = (tabId) => {
-    browser.tabs.get(tabId, tab => {
-      const match = rules.some((r) => r.test(tab.url));
+const checkIfActive = async (tabId) => {
+  const tab = await browser.tabs.get(tabId);
+  const match = rules.some((r) => r.test(tab.url));
 
-      if (match) {
-        browser.browserAction.setIcon({ path: 'clipboard-active-32.png' });
-        browser.browserAction.setTitle({ title: "Don't F*** With Paste (active)" });
-        browser.tabs.sendMessage(tab.id, { active: true });
-      } else {
-        browser.browserAction.setIcon({ path: 'clipboard-inactive-32.png' });
-        browser.browserAction.setTitle({ title: "Don't F*** With Paste (inactive)" });
-        browser.tabs.sendMessage(tab.id, { active: false });
-      }
-    });
-  };
+  if (match) {
+    browser.action.setIcon({ path: 'clipboard-active-32.png' });
+    browser.action.setTitle({ title: "Don't F*** With Paste (active)" });
+    try {
+      await browser.tabs.sendMessage(tab.id, { active: true });
+    } catch { }
+  } else {
+    browser.action.setIcon({ path: 'clipboard-inactive-32.png' });
+    browser.action.setTitle({ title: "Don't F*** With Paste (inactive)" });
+    try {
+      await browser.tabs.sendMessage(tab.id, { active: false });
+    } catch { }
+  }
+};
 
-  const fetchRules = (cb) => {
-    DFWP.storage.get({ rules: [] }, ({ rules: values }) => {
-      rules = DFWP.Rules.deserialize(values);
-      if (cb) { cb(); }
-    });
-  };
-
-  browser.runtime.onInstalled.addListener(({ previousVersion, reason }) => {
-    if (reason === 'update' && previousVersion == '1.1') {
-      DFWP.storage.get({ include: '' }, ({ include }) => {
-        fetchRules(() => {
-          include.split('\n').forEach(value => {
-            if (value !== '.*') {
-              const rule = new DFWP.Rule(value);
-              rules.add(rule);
-            }
-          });
-          DFWP.storage.set({ rules: rules.serialize() });
-        });
-      });
-    }
+const fetchRules = (cb) => {
+  storage.get({ rules: [] }, ({ rules: values }) => {
+    rules = Rules.deserialize(values);
+    if (cb) { cb(); }
   });
+};
 
-  browser.runtime.onMessage.addListener(({ didLoad }) => {
-    if (didLoad) {
-      browser.tabs.query({active: true, windowId: browser.windows.WINDOW_ID_CURRENT}, ([tab]) => {
-        checkIfActive(tab.id);
-      });
-    }
-  });
+browser.runtime.onMessage.addListener(async ({ didLoad }) => {
+  if (didLoad) {
+    const [tab] = await browser.tabs.query({ active: true, windowId: browser.windows.WINDOW_ID_CURRENT })
+    checkIfActive(tab.id);
+  }
+});
 
-  browser.storage.onChanged.addListener(() => {
-    fetchRules(() => {
-      browser.tabs.query({active: true}, tabs => {
-        tabs.forEach(tab => {
-          checkIfActive(tab.id);
-        });
-      });
-    })
-  });
+browser.storage.onChanged.addListener(() => {
+  fetchRules(async () => {
+    const tabs = await browser.tabs.query({ active: true });
+    tabs.forEach(tab => checkIfActive(tab.id));
+  })
+});
 
-  browser.tabs.onActivated.addListener(({ tabId }) => checkIfActive(tabId));
+browser.tabs.onActivated.addListener(({ tabId }) => {
+  checkIfActive(tabId)
+});
 
-  fetchRules();
-})();
+fetchRules();

@@ -1,9 +1,17 @@
+let runtime;
+
+try {
+  runtime = window.browser.runtime;
+} catch {
+  runtime = window.chrome.runtime;
+}
+
 const forceBrowserDefault = function(e){
   e.stopImmediatePropagation();
   return true;
 };
 
-DFWP.browser.runtime.onMessage.addListener(({ active }) => {
+runtime.onMessage.addListener(({ active }) => {
   if (active) {
     document.addEventListener('copy', forceBrowserDefault, true);
     document.addEventListener('cut', forceBrowserDefault, true);
@@ -15,4 +23,4 @@ DFWP.browser.runtime.onMessage.addListener(({ active }) => {
   }
 });
 
-DFWP.browser.runtime.sendMessage({ didLoad: true });
+runtime.sendMessage({ didLoad: true });

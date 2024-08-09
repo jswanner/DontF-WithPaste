@@ -1,36 +1,37 @@
-(function() {
-  let rules = new DFWP.Rules();
+import DFWP, { Rule, Rules, RuleView } from "./dfwp.js";
+const { browser, storage } = DFWP;
 
-  function displayRules(container) {
-    while(container.firstChild) {
-      container.removeChild(container.firstChild);
-    }
+let rules = new Rules();
 
-    DFWP.storage.get({ rules: [] }, ({ rules: values }) => {
-      rules = DFWP.Rules.deserialize(values);
-      rules.forEach((rule) => new DFWP.RuleView(rule, rules).render(container));
-    });
+function displayRules(container) {
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const container = document.querySelector('.container');
-    const form = document.querySelector('.form');
+  storage.get({ rules: [] }, ({ rules: values }) => {
+    rules = Rules.deserialize(values);
+    rules.forEach((rule) => new RuleView(rule, rules).render(container));
+  });
+}
 
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      DFWP.storage.set({ rules: rules.serialize() });
-    });
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('.container');
+  const form = document.querySelector('.form');
 
-    document.querySelector('.add').addEventListener('click', () => {
-      const rule = new DFWP.Rule();
-      rules.add(rule);
-      new DFWP.RuleView(rule, rules).render(container);
-    });
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    storage.set({ rules: rules.serialize() });
+  });
 
-    DFWP.browser.storage.onChanged.addListener(() => {
-      displayRules(container);
-    });
+  document.querySelector('.add').addEventListener('click', () => {
+    const rule = new Rule();
+    rules.add(rule);
+    new RuleView(rule, rules).render(container);
+  });
 
+  browser.storage.onChanged.addListener(() => {
     displayRules(container);
   });
-})();
+
+  displayRules(container);
+});
