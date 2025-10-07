@@ -1,6 +1,6 @@
 # Don't f*** with copy and paste
 
-[Don't F*** With Paste - Chrome Web Store](https://chrome.google.com/webstore/detail/dont-f-with-paste/nkgllhigpcljnhoakjkgaieabnkmgdkb)
+[Don't F*** With Paste - Chrome Web Store](https://chromewebstore.google.com/detail/dont-f-with-paste/efaagigdgamehbpimpiagfpoihlkgamh)
 
 ## Background
 
